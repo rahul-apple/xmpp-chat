@@ -116,13 +116,14 @@ static CGRect keyboardEmoticonRect;
             [HUD hide:YES];
         }
         else{
-            [XAppDelegate.ApiMethods doGetWithDictionary:dicToApi andCallback:^(id completionResponse) {
-                //NSLog(@"Completion response: %@",completionResponse);
-                
-                if ([completionResponse isEqualToString:@"doGetWithDictionary:OK"]) {
-                    [HUD hide:YES];
-                }
-            }];
+            [HUD hide:YES];
+//            [XAppDelegate.ApiMethods doGetWithDictionary:dicToApi andCallback:^(id completionResponse) {
+//                //NSLog(@"Completion response: %@",completionResponse);
+//                
+//                if ([completionResponse isEqualToString:@"doGetWithDictionary:OK"]) {
+//                    [HUD hide:YES];
+//                }
+//            }];
         }
     }];
 }

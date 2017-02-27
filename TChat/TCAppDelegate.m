@@ -365,12 +365,13 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 {
 	DDLogVerbose(@"%@: %@", THIS_FILE, THIS_METHOD);
 	
+    
     NSError *error = nil;
 	[xmppStream secureConnection:&error];
     _isXmppConnected = YES;
     
     //TODO - read password from keychain
-    _thisPassword = @"default";
+    _thisPassword = self.password;//@"default";
     
     if ([xmppStream isSecure]) {
         if (![[self xmppStream] authenticateWithPassword:_thisPassword error:&error])
